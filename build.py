@@ -5,7 +5,7 @@ from pathlib import Path
 import markdown
 
 # 원고 정본은 같은 Google Drive를 윈도우와 맥에서 각각 다른 지점으로 마운트한다.
-_REL = "KHY/Lectures/261102 울산시교육청 시각장애 교원 역량 강화 연수/4. 강의 원고/강의 원고 초안.md"
+_REL = "KHY/Lectures/261102 울산시교육청 시각장애 교원 역량 강화 연수/4. 강의 원고/김헌용_강의원고.md"
 _ROOTS = [Path(r"G:\내 드라이브")]                                   # Windows
 _ROOTS += sorted((Path.home() / "Library/CloudStorage").glob("GoogleDrive-*/My Drive"))  # macOS
 SRC = next((r / _REL for r in _ROOTS if (r / _REL).is_file()), None)

@@ -8,7 +8,7 @@
 
 - 저장소: https://github.com/Engccer/ulsan-ai-training-2611
 - 배포 URL: https://engccer.github.io/ulsan-ai-training-2611/ (main 브랜치 루트에서 GitHub Pages)
-- 콘텐츠 정본: `G:\내 드라이브\KHY\Lectures\261102 울산시교육청 시각장애 교원 역량 강화 연수\4. 강의 원고\강의 원고 초안.md`. 이 저장소는 그 내용을 옮긴 것이다. <!-- sanitize: allow 원고 정본 위치. 이 저장소의 존재 이유라 일반화 불가 -->
+- 콘텐츠 정본: `G:\내 드라이브\KHY\Lectures\261102 울산시교육청 시각장애 교원 역량 강화 연수\4. 강의 원고\김헌용_강의원고.md`. 이 저장소는 그 내용을 옮긴 것이다. <!-- sanitize: allow 원고 정본 위치. 이 저장소의 존재 이유라 일반화 불가 -->
 
 ## 구조
 
