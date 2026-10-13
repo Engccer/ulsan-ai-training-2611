@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 에이전트 실습 - 스킬로 학교업무 자동화하기</title>
+<style>
+  :root { color-scheme: light dark; --fg: #1a1a1a; --bg: #fff; --line: #888; --code: #f2f2f2; }
+  @media (prefers-color-scheme: dark) { :root { --fg: #eee; --bg: #121212; --code: #222; } }
+  html { font-size: 112.5%; }
+  body { margin: 0; padding: 1rem; max-width: 46rem; margin-inline: auto; font-family: "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; line-height: 1.7; color: var(--fg); background: var(--bg); word-break: keep-all; overflow-wrap: anywhere; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.3rem; margin-top: 2rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+  h3 { font-size: 1.1rem; }
+  button { font: inherit; color: inherit; background: var(--bg); border: 2px solid var(--fg); border-radius: .5rem; min-height: 44px; cursor: pointer; }
+  button:hover { background: var(--code); }
+  :focus-visible { outline: 3px solid #0a66ff; outline-offset: 2px; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid var(--line); padding: .4rem .6rem; text-align: left; vertical-align: top; }
+  pre, code { font-family: Consolas, "D2Coding", monospace; font-size: .95em; }
+  pre { background: var(--code); padding: .75rem; overflow-x: auto; white-space: pre-wrap; }
+  code { background: var(--code); padding: 0 .2em; }
+  pre code { padding: 0; }
+  .copy { margin: 1rem 0 .25rem; padding: .5rem .9rem; font-size: .9rem; }
+  pre a { color: inherit; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .table-wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+<main>
+<h1>AI 에이전트 실습 - 스킬로 학교업무 자동화하기</h1>
+<p>2026학년도 울산시교육청 시각장애 교원 역량 강화 연수 · 2026. 11. 2.(월) 15:00~16:30 · 김헌용(서울 신명중학교 교사). 본문의 인터넷 주소는 새 탭에서 열립니다.</p>
+{{BODY}}
+<p id="say" class="sr-only" role="status" aria-live="polite"></p>
+</main>
+<script>
+(function () {
+  // 안내는 한 곳에서만 낸다. 같은 문구를 다시 넣으면 낭독되지 않으므로 비웠다가 채운다.
+  var say = document.getElementById('say');
+  function announce(msg) {
+    say.textContent = '';
+    setTimeout(function () { say.textContent = msg; }, 60);
+  }
+  // 클립보드에는 textContent만 넣는다. 태그도 버튼 글자도 섞이지 않는다.
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('button[data-copy]');
+    if (!btn) return;
+    var pre = btn.nextElementSibling;
+    if (!pre) return;
+    if (!navigator.clipboard) {
+      announce('이 브라우저에서는 복사 버튼을 쓸 수 없습니다. 직접 선택해 복사하세요.');
+      return;
+    }
+    navigator.clipboard.writeText(pre.textContent.replace(/\s+$/, '')).then(function () {
+      announce('복사했습니다.');
+    }, function () {
+      announce('복사하지 못했습니다. 직접 선택해 복사하세요.');
+    });
+  });
+})();
+</script>
+</body>
+</html>
